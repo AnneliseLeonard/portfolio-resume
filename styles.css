@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "Crimson Pro";
+    src: url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root {
+    --heading-font: "Crimson Pro", serif;
+    --text-font: "Montserrat", sans-serif;
+    --color-background: 13,3,18;               /* Main background */
+    --color-primary: 25,123,132;             /* Primary brand color (nav, buttons, emphasis) */
+    --color-secondary: 124,182,159;          /* Secondary elements (tabs, toggles) */
+    --color-accent: 216,183,177;             /* Highlights, CTA buttons, notifications */
+    --color-text-primary: 235,229,198;       /* Primary body text */
+    --color-text-secondary: 15,41,75;        /* Secondary text, placeholders */
+}
+[data-theme="light"] {
+    --color-background: 243, 237, 229;
+    --color-primary: 89, 136, 140;
+    --color-secondary: 42, 85, 94;
+    --color-accent: 202, 152, 139;
+    --color-text-primary: 0, 4, 3;
+    --color-text-secondary: 160, 204, 212;
+}
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--heading-font);
+    color: rgb(var(--color-text-primary));
+}
+body, html, main {
+    font-family: var(--text-font);
+    text-align: center;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    h1 { font-size: 12vw; }
+    h2 { font-size: 8vw; }
+    h3 { font-size: 6vw; }
+    h4 { font-size: 5vw; }
+    p { font-size: 3vw; }
+    .nav a { font-size: 3vw; }
+}
+
+/* ---- HEADER ---- */
+header {
+    background-color: rgba(var(--color-background), .5);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 1vw 0;
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+}
+.logo {
+    justify-content: flex-start;
+
+}
+nav {
+    justify-content: flex-end;
+}
+nav a {
+    padding: .5vh 1vw;
+    text-decoration: none;
+    color: rgb(var(--color-text-primary));
+    font-family: var(--text-font)
+}
+nav a:hover, nav a:active {
+    border-radius: 5px;
+    background-color: rgb(var(--color-primary));
+}
+
+/* ---- MAIN ---- */
+section {
+    min-height: 100vh;
+}
+.container {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ---- HOME ---- */
+.btn {
+    background: linear-gradient(90deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+    color: rgb(var(--color-background));
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(var(--color-accent), 0.3);
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(var(--color-accent), 0.4);
+}
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+.gradient-sphere {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+.sphere-1 {
+    width: 50vw;
+    height: 50vw;
+    background: linear-gradient(100deg, rgba(var(--color-primary), 0.8), rgba(39, 192, 206, 0.4));
+    top: -10%;
+    left: -10%;
+    animation: float-1 15s ease-in-out infinite alternate;
+}
+.sphere-2 {
+    width: 40vw;
+    height: 40vw;
+    background: linear-gradient(240deg, rgba(var(--color-secondary), 0.8), rgba(164, 204, 188, 0.4));
+    bottom: -20%;
+    right: -10%;
+    animation: float-2 18s ease-in-out infinite alternate;
+}
+.sphere-3 {
+    width: 30vw;
+    height: 30vw;
+    background: linear-gradient(120deg, rgba(var(--color-text-secondary) 0.5), rgba(30, 84, 153, 0.6));
+    top: 20%;
+    left: 60%;
+    animation: float-3 20s ease-in-out infinite alternate;
+}
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: 5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+@keyframes float-1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(10%, 10%) scale(1.1);
+    }
+}
+@keyframes float-2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(-10%, -5%) scale(1.15);
+    }
+}
+@keyframes float-3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-5%, 10%) scale(1.05);
+        opacity: 0.6;
+    }
+}
+.glow {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    background: radial-gradient(circle, rgba(var(--color-text-secondary)), transparent 70%);
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: pulse 8s infinite alternate;
+    filter: blur(30px);
+}
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+.particle {
+    position: absolute;
+    background: rgb(var(--color-text-primary));
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+#home .container {
+    margin-top: -8vh;
+    z-index: 2;
+}
+#home h1 {
+    text-shadow: 0 0 20px rgba(var(--color-accent), 0.2);
+    font-size: 14vh;
+    padding: 4vh;
+}
+#home h2 {
+    font-size: 7vh;
+}
+#home p {
+    padding: 2.5vh;
+    font-size: 3.5vh;
+}
