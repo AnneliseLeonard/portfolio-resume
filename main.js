@@ -84,9 +84,13 @@ function animateParticle(particle) {
 
 // Mouse interaction
 document.addEventListener('mousemove', (e) => {
-    // Create particles at mouse position
-    const mouseX = (e.clientX / window.innerWidth) * 100;
-    const mouseY = (e.clientY / window.innerHeight) * 100;
+    // Get the particles container's position
+    const container = document.getElementById('particles-container');
+    const rect = container.getBoundingClientRect();
+    
+    // Calculate mouse position relative to the container
+    const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+    const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
     
     // Create temporary particle
     const particle = document.createElement('div');
@@ -102,7 +106,7 @@ document.addEventListener('mousemove', (e) => {
     particle.style.top = `${mouseY}%`;
     particle.style.opacity = '0.6';
     
-    particlesContainer.appendChild(particle);
+    container.appendChild(particle);
     
     // Animate outward
     setTimeout(() => {
