@@ -51,9 +51,10 @@ body, html, main {
 
 /* ---- HEADER ---- */
 header {
-    background-color: rgba(var(--color-background), .5);
-    position: sticky;
+    background-color: rgb(var(--color-background));
     top: 0;
+    left: 0;
+    position: sticky;
     width: 100%;
     padding: 1vw 0;
     z-index: 100;
@@ -78,7 +79,7 @@ nav a {
 }
 nav a:hover, nav a:active {
     border-radius: 5px;
-    background-color: rgba(var(--color-primary), .8);
+    background-color: rgba(var(--color-primary), .9);
 }
 
 /* ---- MAIN ---- */
@@ -106,6 +107,11 @@ h3 {
 p {
     padding: 2.5vh;
     font-size: 3.5vh;
+}
+a {
+    text-decoration: none;
+    color: rgb(var(--color-text-secondary));
+    cursor: pointer;
 }
 
 /* ---- HOME ---- */
@@ -259,19 +265,6 @@ p {
 /* ---- SKILLS ---- */
 #skills {
     width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: rgb(var(--color-background));
-    position: relative;
-    z-index: 4;
-    top: 100vh;
-}
-
-
-/* ---- PROJECTS ---- */
-#projects {
-    width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -280,8 +273,112 @@ p {
     z-index: 4;
     top: 100vh;
 }
+.skills-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 3vh;
+    margin: 5vh;
+}
+.skills-grid i {
+    border: rgb(var(--color-text-primary)) 1px solid;
+    border-radius: 10px;
+    font-size: 6.5vw;
+    padding: 1.5vh;
+}
 
 
+/* ---- PROJECTS ---- */
+#projects {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: url("blackgreenblue_crop.png");
+    background-attachment: fixed;
+    background-position-y: center;
+    position: relative;
+    z-index: 4;
+    top: 100vh;
+    padding: 10vh;
+}
+#projects .overlay {
+    background: linear-gradient(130deg, rgba(var(--color-text-secondary), 0.7), rgba(var(--color-secondary), 0.7));
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#projects .container {
+    position: relative;
+}
+.project-grid {
+    display: grid;
+    row-gap: 5vh;
+    margin-top: 4vh;
+}
+.project-card {
+    background-color: rgba(var(--color-primary), .65);
+    border-radius: 12px;
+    padding: 5vh 2vw;
+    box-shadow: 2px 6px 20px rgba(var(--color-background), 0.4);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.card-l {
+    grid-template-columns: 1.5fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+.card-r {
+    grid-template-columns: 2fr 1.5fr;
+    justify-content: center;
+    align-items: center;
+}
+.project-card a {
+    background-color: rgba(var(--color-secondary), .7);
+    padding: .5vh .8vw;
+    border-radius: 10px;
+    margin: 1vh;
+    margin-top: 2vh;
+    font-size: 2.5vh;
+    box-shadow: 1px 3px 8px rgba(var(--color-background), 0.4);
+    display: flex;
+    flex-direction: column;
+    color: rgb(var(--color-text-primary))
+}
+.project-card a:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 2px 4px 10px rgba(var(--color-accent), 0.4);
+}
+.project-card p {
+    font-size: 3vh;
+    margin-bottom: -1.5vh;
+}
+.project-card i {
+    font-size: 6.5vh;
+    padding: .7vh;
+    margin: 0 .5vw;
+    margin-bottom: .5vh;
+    background-color: rgba(var(--color-secondary), .7);
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    box-shadow: 1px 3px 8px rgba(var(--color-background), 0.4);
+    display: inline-block;
+}
+.project-card i:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 2px 4px 10px rgba(var(--color-accent), 0.4);
+}
+.clicky-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ---- RESUME ---- */
 #resume {
@@ -300,6 +397,7 @@ p {
 /* ---- CONTACT ---- */
 #contact {
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: rgb(var(--color-background));
@@ -320,4 +418,7 @@ footer {
     position: relative;
     z-index: 6;
     top: 100vh;
+}
+footer p {
+    font-size: 2.5vh;
 }
