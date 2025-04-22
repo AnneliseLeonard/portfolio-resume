@@ -296,7 +296,6 @@ a {
     overflow-y: auto;
     background-image: url("blackgreenblue_crop.png");
     background-attachment: fixed;
-    background-position-y: center;
     position: relative;
     z-index: 4;
     top: 100vh;
