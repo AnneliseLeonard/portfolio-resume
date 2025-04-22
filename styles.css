@@ -295,6 +295,7 @@ a {
     overflow-x: hidden;
     overflow-y: auto;
     background-image: url("blackgreenblue_crop.png");
+    background-size: cover;
     background-attachment: fixed;
     position: relative;
     z-index: 4;
