@@ -13,30 +13,70 @@
 :root {
     --heading-font: "Crimson Pro", serif;
     --text-font: "Montserrat", sans-serif;
-    --color-background: 13,3,18;               /* Main background */
-    --color-primary: 25,123,132;             /* Primary brand color (nav, buttons, emphasis) */
-    --color-secondary: 124,182,159;          /* Secondary elements (tabs, toggles) */
-    --color-accent: 216,183,177;             /* Highlights, CTA buttons, notifications */
-    --color-text-primary: 235,229,198;       /* Primary body text */
-    --color-text-secondary: 15,41,75;        /* Secondary text, placeholders */
+    --background: 20, 23, 25;
+    --text: 222, 226, 227;
+    --primary: 92, 174, 178;
+    --secondary: 128, 182, 156;
+    --accent: 229, 132, 108;
+    --background-25: 20, 25, 24, .25;
+    --background-50: 20, 25, 24, .5;
+    --background-75: 20, 25, 24, .75;
+    --background-90: 20, 25, 24, .9;
+    --text-25: 222, 226, 227, .25;
+    --text-50: 222, 226, 227, .5;
+    --text-75: 222, 226, 227, .75;
+    --text-90: 222, 226, 227, .9;
+    --primary-25: 92, 174, 178, .25;
+    --primary-50: 92, 174, 178, .5;
+    --primary-75: 92, 174, 178, .75;
+    --primary-90: 92, 174, 178, .9;
+    --secondary-25: 128, 182, 156, .25;
+    --secondary-50: 128, 182, 156, .5;
+    --secondary-75: 128, 182, 156, .75;
+    --secondary-90: 128, 182, 156, .9;
+    --accent-25: 229, 132, 108, .25;
+    --accent-50: 229, 132, 108, .5;
+    --accent-75: 229, 132, 108, .75;
+    --accent-90: 229, 132, 108, .9;
 }
 [data-theme="light"] {
-    --color-background: 243, 237, 229;
-    --color-primary: 89, 136, 140;
-    --color-secondary: 42, 85, 94;
-    --color-accent: 202, 152, 139;
-    --color-text-primary: 0, 4, 3;
-    --color-text-secondary: 160, 204, 212;
+    --heading-font: "Crimson Pro", serif;
+    --text-font: "Montserrat", sans-serif;
+    --background: 20, 23, 25;
+    --text: 222, 226, 227;
+    --primary: 92, 174, 178;
+    --secondary: 124, 182, 159;
+    --accent: 229, 132, 108;
+    --background-25: 20, 25, 24, .25;
+    --background-50: 20, 25, 24, .5;
+    --background-75: 20, 25, 24, .75;
+    --background-90: 20, 25, 24, .9;
+    --text-25: 222, 226, 227, .25;
+    --text-50: 222, 226, 227, .5;
+    --text-75: 222, 226, 227, .75;
+    --text-90: 222, 226, 227, .9;
+    --primary-25: 92, 174, 178, .25;
+    --primary-50: 92, 174, 178, .5;
+    --primary-75: 92, 174, 178, .75;
+    --primary-90: 92, 174, 178, .9;
+    --secondary-25: 124, 182, 159, .25;
+    --secondary-50: 124, 182, 159, .5;
+    --secondary-75: 124, 182, 159, .75;
+    --secondary-90: 124, 182, 159, .9;
+    --accent-25: 229, 132, 108, .25;
+    --accent-50: 229, 132, 108, .5;
+    --accent-75: 229, 132, 108, .75;
+    --accent-90: 229, 132, 108, .9;
 }
 :is(h1, h2, h3, h4, h5, h6) {
     font-family: var(--heading-font);
-    color: rgb(var(--color-text-primary));
+    color: rgb(var(--text));
 }
 body, html, main {
     font-family: var(--text-font);
     text-align: center;
-    background-color: rgb(var(--color-background));
-    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--background));
+    color: rgb(var(--text));
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
@@ -51,13 +91,15 @@ body, html, main {
 
 /* ---- HEADER ---- */
 header {
-    background-color: rgb(var(--color-background));
+    background-color: rgb(var(--background));
     top: 0;
     left: 0;
     position: sticky;
     width: 100%;
     padding: 1vw 0;
     z-index: 100;
+    justify-content: center;
+    align-items: center;
 }
 .navbar {
     display: flex;
@@ -66,7 +108,15 @@ header {
 }
 .logo {
     justify-content: flex-start;
-
+}
+.logo img[src="assets/primary-logo.png"] {
+    width: 3vw;
+    height: auto;
+    margin: -1.1vh 0;
+}
+.logo img[src="assets/logo.png"]:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 nav {
     justify-content: flex-end;
@@ -74,12 +124,13 @@ nav {
 nav a {
     padding: .5vh 1vw;
     text-decoration: none;
-    color: rgb(var(--color-text-primary));
+    color: rgb(var(--text));
     font-family: var(--text-font)
 }
 nav a:hover, nav a:active {
     border-radius: 5px;
-    background-color: rgba(var(--color-primary), .9);
+    background-color: rgba(var(--primary-75));
+    box-shadow: 1px 1px 12px rgba(var(--secondary-50));
 }
 
 /* ---- MAIN ---- */
@@ -104,13 +155,15 @@ h2 {
 h3 {
     font-size: 5vh;
 }
+h4 {
+    font-size: 3.2vh;
+}
 p {
     padding: 2.5vh;
     font-size: 3.5vh;
 }
 a {
     text-decoration: none;
-    color: rgb(var(--color-text-secondary));
     cursor: pointer;
 }
 
@@ -124,22 +177,24 @@ a {
     z-index: 1;
 }
 .btn {
-    background: linear-gradient(90deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
-    color: rgb(var(--color-background));
+    background: linear-gradient(90deg, rgb(var(--primary)), rgba(var(--accent-50)));
+    color: rgb(var(--text));
     font-weight: 600;
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    padding: 1.6vh 2.2vw;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 4px 20px rgba(var(--color-accent), 0.3);
+    box-shadow: 0 4px 10px rgba(var(--accent), .4);
+    font-family: var(--text-font);
+    margin-top: 1vh;
 }
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(var(--color-accent), 0.4);
+    box-shadow: 0 6px 15px rgba(var(--accent-50));
 }
 .gradient-background {
     position: absolute;
@@ -156,17 +211,17 @@ a {
     filter: blur(60px);
 }
 .sphere-1 {
-    width: 50vw;
-    height: 50vw;
-    background: linear-gradient(100deg, rgba(var(--color-primary), 0.8), rgba(39, 192, 206, 0.4));
+    width: 55vw;
+    height: 55vw;
+    background: linear-gradient(100deg, rgba(var(--primary)), rgba(var(--primary-50)));
     top: -10%;
     left: -10%;
     animation: float-1 15s ease-in-out infinite alternate;
 }
 .sphere-2 {
-    width: 40vw;
-    height: 40vw;
-    background: linear-gradient(240deg, rgba(var(--color-secondary), 0.8), rgba(164, 204, 188, 0.4));
+    width: 35vw;
+    height: 35vw;
+    background: linear-gradient(240deg, rgba(var(--accent-50)), rgba(var(--accent-25)));
     bottom: -20%;
     right: -10%;
     animation: float-2 18s ease-in-out infinite alternate;
@@ -174,7 +229,7 @@ a {
 .sphere-3 {
     width: 30vw;
     height: 30vw;
-    background: linear-gradient(120deg, rgba(var(--color-text-secondary) 0.5), rgba(30, 84, 153, 0.6));
+    background: linear-gradient(120deg, rgba(var(--secondary) 0.5), rgba(var(--secondary-50)));
     top: 20%;
     left: 60%;
     animation: float-3 20s ease-in-out infinite alternate;
@@ -219,9 +274,9 @@ a {
     position: absolute;
     width: 40vw;
     height: 40vh;
-    background: radial-gradient(circle, rgba(var(--color-text-secondary)), transparent 70%);
-    top: 80%;
-    left: 40%;
+    background: radial-gradient(circle, rgba(var(--secondary-50)), transparent 70%);
+    top: 20%;
+    left: 70%;
     transform: translate(-50%, -50%);
     z-index: 2;
     animation: pulse 8s infinite alternate;
@@ -248,7 +303,7 @@ a {
 }
 .particle {
     position: absolute;
-    background: rgb(var(--color-text-primary));
+    background: rgb(var(--text));
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
@@ -258,7 +313,7 @@ a {
     z-index: 2;
 }
 #home h1 {
-    text-shadow: 0 0 20px rgba(var(--color-accent), 0.2);
+    text-shadow: 0 0 20px rgba(var(--accent-25));
 }
 
 
@@ -268,7 +323,7 @@ a {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgb(var(--color-background));
+    background-color: rgb(var(--background));
     position: relative;
     z-index: 4;
     top: 100vh;
@@ -281,11 +336,18 @@ a {
     margin: 5vh;
 }
 .skills-grid i {
-    border: rgb(var(--color-text-primary)) 1px solid;
+    border: rgb(var(--text)) 1px solid;
     border-radius: 10px;
     font-size: 6.5vw;
     padding: 1.5vh;
 }
+.skills-grid i:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(var(--primary-90));
+    color: rgb(var(--primary));
+    border-color: rgb(var(--primary));
+}
+
 
 
 /* ---- PROJECTS ---- */
@@ -294,7 +356,7 @@ a {
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background-image: url("blackgreenblue_crop.png");
+    background-image: url("assets/blackgreenblue_crop.png");
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -303,7 +365,7 @@ a {
     padding: 10vh;
 }
 #projects .overlay {
-    background: linear-gradient(130deg, rgba(var(--color-text-secondary), 0.7), rgba(var(--color-secondary), 0.7));
+    background: linear-gradient(120deg, rgba(var(--background-75)), rgba(var(--secondary-75)), rgba(var(--secondary-75)));
     height: 100%;
     width: 100vw;
     top: 0;
@@ -319,10 +381,10 @@ a {
     margin-top: 4vh;
 }
 .project-card {
-    background-color: rgba(var(--color-primary), .65);
+    background-color: rgba(var(--primary), .8);
     border-radius: 12px;
     padding: 5vh 2vw;
-    box-shadow: 2px 6px 20px rgba(var(--color-background), 0.4);
+    box-shadow: 2px 6px 20px rgba(var(--background-50));
     display: grid;
     justify-content: center;
     align-items: center;
@@ -339,20 +401,20 @@ a {
     align-items: center;
 }
 .project-card a {
-    background-color: rgba(var(--color-secondary), .7);
+    background-color: rgba(var(--secondary-75));
     padding: .5vh .8vw;
     border-radius: 10px;
     margin: 1vh;
     margin-top: 2vh;
     font-size: 2.5vh;
-    box-shadow: 1px 3px 8px rgba(var(--color-background), 0.4);
+    box-shadow: 1px 3px 8px rgba(var(--background-50));
     display: flex;
     flex-direction: column;
-    color: rgb(var(--color-text-primary))
+    color: rgb(var(--text))
 }
 .project-card a:hover {
     transform: translateY(-1.5px);
-    box-shadow: 2px 4px 10px rgba(var(--color-accent), 0.4);
+    box-shadow: 2px 4px 10px rgba(var(--accent), .6);
 }
 .project-card p {
     font-size: 3vh;
@@ -363,15 +425,15 @@ a {
     padding: .7vh;
     margin: 0 .5vw;
     margin-bottom: .5vh;
-    background-color: rgba(var(--color-secondary), .7);
+    background-color: rgba(var(--secondary-75));
     padding: 1vh 1vw;
     border-radius: 10px;
-    box-shadow: 1px 3px 8px rgba(var(--color-background), 0.4);
+    box-shadow: 1px 3px 8px rgba(var(--background-50));
     display: inline-block;
 }
 .project-card i:hover {
     transform: translateY(-1.5px);
-    box-shadow: 2px 4px 10px rgba(var(--color-accent), 0.4);
+    box-shadow: 2px 4px 10px rgba(var(--accent), .6);
 }
 .clicky-row {
     display: flex;
@@ -382,16 +444,77 @@ a {
 
 /* ---- RESUME ---- */
 #resume {
-    width: 100%;
     height: 100%;
+    min-width: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
-    background-color: rgb(var(--color-background));
+    overflow-y: visible;
+    background-color: rgb(var(--background));
     position: relative;
     z-index: 4;
     top: 100vh;
 }
-
+#resume a {
+    text-decoration: none;
+    color: rgba(var(--secondary));
+    cursor: pointer;
+    margin: 2vh;
+    padding: 1vh 1vw;
+}
+#resume a:hover {
+    color: rgba(var(--background));
+    background-color: rgba(var(--primary-90));
+    border-radius: 10px;
+    box-shadow: 1px 3px 8px rgba(var(--accent-50));
+}
+#resume p {
+    font-size: 2.3vh;
+}
+.timeline {    
+    list-style-type: none;
+    counter-reset: number;
+    position: relative;
+    display: block;
+    z-index: 2;
+    width: 100%;
+    margin: 2vh;
+}
+.timeline::before {
+    content: '';
+    width: 100%;
+    border-top: .7vh solid rgba(var(--secondary));
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    border-radius: 10px;
+}
+.timeline-item {
+    position: relative;
+    display: inline-block;
+    width: calc(100% / 3 - 3rem);
+    color: rgba(var(--text));
+}
+.timeline-item::before {     /* Circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    counter-increment: number;
+    content: counter(number) '';
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(var(--primary));
+    color: rgb(var(--text));
+    font-weight: bold;
+    transition: all 0.6s ease-in-out;
+}
+.timeline-item:hover::before {
+    background-color: rgba(var(--secondary));
+    transform: scale(2);
+}
+.timeline-item:nth-child(even) {
+    margin-top: -15vh;
+}
 
 
 /* ---- CONTACT ---- */
@@ -400,10 +523,73 @@ a {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgb(var(--color-background));
+    background-color: rgba(var(--background));
     position: relative;
-    z-index: 4;
+    z-index: 5;
     top: 100vh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(var(--primary-75));
+    box-shadow: 2px 4px 15px rgba(var(--accent), .4);
+    border-radius: 10px;
+    padding: 0 3.5vh 4vw;
+    margin-top: 3vh;
+}
+form label {
+    margin-top: 2.5vh;
+    margin-bottom: 1vh;
+    font-size: 3vh;
+}
+input, textarea {
+    border-radius: 6px;
+    border: none;
+    font-size: 2.7vh;
+    padding: 1vh 1.5vh;
+    width: 50vw;
+    box-shadow: 1px 2px 10px rgba(var(--background), .3);
+    font-family: var(--text-font);
+    background-color: rgba(var(--text));
+}
+input {
+    height: 6vh;
+}
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 1.5px 3px 10px rgba(var(--accent-50));
+    color: rgb(var(--background));
+    padding: 1vh 1.5vh;
+    font-family: var(--text-font);
+    font-size: 2.7vh;
+    padding: 1vh 1.5vh;
+}
+textarea {
+    text-decoration: none;
+    height: 15vh;
+    resize: none;
+}
+form button {
+    margin-top: 3vh;
+    padding: 1vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(var(--secondary));
+    color: rgb(var(--background));
+    font-family: var(--text-font);
+    font-size: 2.5vh;
+    font-weight: 500;
+    box-shadow: 1px 3px 10px rgba(var(--background-50));
+}
+form button:hover {
+    background-color: rgba(var(--accent-75));
+    color: rgb(var(--text));
+    cursor: pointer;
+    font-family: var(--text-font);
+    font-size: 2.5vh;
+    font-weight: 500;
 }
 
 
@@ -414,7 +600,7 @@ footer {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgb(var(--color-background));
+    background-color: rgb(var(--background));
     position: relative;
     z-index: 6;
     top: 100vh;
