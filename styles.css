@@ -114,10 +114,6 @@ header {
     height: auto;
     margin: -1.1vh 0;
 }
-.logo img[src="assets/logo.png"]:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
 nav {
     justify-content: flex-end;
 }
