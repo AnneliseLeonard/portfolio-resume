@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -33,7 +35,6 @@
                 <div class="gradient-sphere sphere-2"></div>
                 <div class="gradient-sphere sphere-3"></div>
                 <div class="glow"></div>
-                <div class="noise-overlay"></div>
                 <div class="particles-container" id="particles-container"></div>
               </div>
               <div class="container">
@@ -161,31 +162,31 @@
                 <div id="timeline">
                   <ul>
                     <li>
-                      <div class="timeline-item">
+                      <div class="timeline-item" data-aos="fade-left">
                         <h4 class="resume-title">Interdisciplinary Advisor</h4>
                         <p class="resume-text">Project management, content creation, presentations.</p>
                       </div>
                     </li>
                     <li>
-                      <div class="timeline-item">
+                      <div class="timeline-item" data-aos="fade-right">
                         <h4 class="resume-title">Personal Trainer & Business Owner</h4>
                         <p class="resume-text">Personal Trainer & Business Owner</p>
                       </div>
                     </li>
                     <li>
-                      <div class="timeline-item">
+                      <div class="timeline-item" data-aos="fade-left">
                         <h4 class="resume-title">Adjunct Professor</h4>
                         <p class="resume-text">Adjunct Professor</p>
                       </div>
                     </li>
                     <li>
-                      <div class="timeline-item">
+                      <div class="timeline-item" data-aos="fade-right">
                         <h4 class="resume-title">Sustainability Intern</h4>
                         <p class="resume-text">Sustainability Intern</p>
                       </div>
                     </li>
                     <li>
-                      <div class="timeline-item">
+                      <div class="timeline-item" data-aos="fade-left">
                         <h4 class="resume-title">Historian</h4>
                         <p class="resume-text">Historian</p>
                       </div>
@@ -196,31 +197,40 @@
               </div>
             </section>
         
+            <div id="background"></div>
             <section id="contact">
               <div class="container">
-              <h2>Contact</h2>
-              <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-        
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-        
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-        
-                <button type="submit">Send</button>
-              </form>
+                <h2>Contact</h2>
+                  <form action="mailto:annelise.leonard2@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <button type="submit">Send</button>
+                  </form>
               </div>
             </section>
         </main>
         
         <footer id="footer">
             <p>&copy; 2025 Annelise Leonard</p>
+            <p>
+              <a href="https://github.com/AnneliseLeonard"><i class="devicon-github-original"></i></a>
+              <a href="https://www.linkedin.com/in/annelise-leonard/"><i class="fa fa-linkedin-square"></i></a>
+            </p>
         </footer>
 
     </body>
 
     <script src="main.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 </html>
