@@ -334,7 +334,7 @@ a {
 .skills-grid i {
     border: rgb(var(--neutral-6)) 2px solid;
     border-radius: 10px;
-    font-size: 7vw;
+    font-size: 6.5vw;
     padding: 1.25vh;
     margin: 0 -.5vh;
 }
