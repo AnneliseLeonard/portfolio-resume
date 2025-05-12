@@ -24,29 +24,27 @@
     --neutral-7: 156, 164, 169;
     --neutral-8: 183, 191, 196;
     --neutral-9: 219, 223, 225;
-    --primary-0: 42, 75, 77;
-    --primary-1: 57, 101, 104;
-    --primary-2: 74, 130, 134;
-    --primary-3: 88, 156, 161;
-    --primary-4: 115, 174, 178;
-    --primary-5: 134, 185, 188;
-    --primary-6: 164, 202, 205;
+    --primary-0: 30, 75, 84;
+    --primary-1: 40, 100, 111;
+    --primary-2: 50, 124, 139;
+    --primary-3: 60, 149, 167;
+    --primary-4: 75, 170, 190;
+    --primary-5: 101, 183, 199;
+    --primary-6: 126, 195, 209;
     --primary-7: 194, 220, 222;
     --primary-8: 225, 237, 238;
-    --secondary-0: 58, 99, 82;
-    --secondary-1: 78, 106, 89;
-    --secondary-2: 85, 116, 98;
-    --secondary-3: 100, 135, 114;
-    --secondary-4: 131, 163, 144;
-    --secondary-5: 153, 180, 164;
-    --secondary-6: 187, 1205, 194;
-    --accent-0: 148, 54, 32;
-    --accent-1: 175, 70, 48;
-    --accent-2: 201, 101, 76;
-    --accent-3: 210, 103, 77;
-    --accent-4: 230, 132, 108;
-    --accent-5: 235, 158, 139;
-    --accent-6: 241, 184, 170;
+    --secondary-0: 48, 107, 87;
+    --secondary-1: 66, 147, 120;
+    --secondary-2: 89, 181, 151;
+    --secondary-3: 113, 191, 165;
+    --secondary-4: 137, 202, 180;
+    --secondary-5: 160, 213, 195;
+    --secondary-6: 196, 228, 218;
+    --accent-0: 195, 71, 46;
+    --accent-1: 212, 94, 70;
+    --accent-2: 218, 116, 96;
+    --accent-3: 224, 139, 122;
+    --accent-4: 233, 174, 162;
 }
 [data-theme="light"] {
     --heading-font: "Crimson Pro", serif;
@@ -346,7 +344,6 @@ a {
 }
 
 
-
 /* ---- PROJECTS ---- */
 #projects {
     width: 100%;
@@ -589,6 +586,7 @@ a {
     font-size: 3vh;
     -webkit-transition: max-height 0.5s;
     transition: max-height 0.5s;
+    transition-timing-function: linear;
 }
 #timeline ul li .timeline-item:hover .resume-text {
     max-height: 30vh;
