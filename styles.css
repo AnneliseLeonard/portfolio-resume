@@ -110,14 +110,14 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 14px 20px 14px 25px;
+    padding: 5px 25px 5px 25px;
+    align-items: center;
 }
 .logo {
     justify-content: flex-start;
-    margin-left: -5px;
 }
 .logo img[src="assets/primary-logo.png"] {
-    width: 12vw;
+    width: 11vw;
     height: auto;
     margin: -6.2vh -5vw;
 }
